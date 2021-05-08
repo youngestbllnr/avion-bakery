@@ -60,3 +60,8 @@ run bundler
 
     bundle
     
+## Run
+
+Execute the bakery.rb file
+
+    ruby bakery.rb
