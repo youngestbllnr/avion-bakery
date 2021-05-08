@@ -26,17 +26,14 @@ To save on shipping space each order should contain the minimal number of packs.
 Each order has a series of lines with each line containing the number of items followed by the product
 code. An example input:
   
-    ```
     10 VS5
     14 MB11
     13 CF
-    ```
 
 ## Output
 
 A successfully passing test(s) that demonstrates the following output:
 
-    ```
     10 VS5 $17.98
         2 x 5 $8.99
     14 MB11 $54.8
@@ -45,7 +42,6 @@ A successfully passing test(s) that demonstrates the following output:
     13 CF $25.85
         2 x 5 $9.95
         1 x 3 $5.95
-    ```
 
 ## Advise
 
@@ -58,12 +54,9 @@ A successfully passing test(s) that demonstrates the following output:
 
 Use bundler to install the dependencies. To do so, you need to install the bundler gem if you haven't already done so
 
-    ```
     gem install bundler
-    ```
 
 run bundler
 
-    ```
     bundle
-    ```
+    
