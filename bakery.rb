@@ -1,5 +1,5 @@
 require_relative './lib/cart'
-require_relative './lib/services/cashier'
+require_relative './lib/service'
 require 'tty/prompt'
 
 class Bakery
@@ -26,7 +26,7 @@ class Bakery
 
   def pay
     puts "\n--------RECEIPT--------"
-    Cashier.call(@cart)
+    Service::Cashier.call(@cart)
     puts "\n-----END OF RECEIPT-----"
   end
 

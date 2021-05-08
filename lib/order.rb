@@ -1,5 +1,5 @@
 require_relative './product'
-require_relative './services/packer'
+require_relative './service'
 
 class Order
   attr_reader :breakdown, :cost
