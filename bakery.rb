@@ -37,15 +37,13 @@ class Bakery
   private
 
   def add_to_cart
-    # Set questions to be asked on the prompt
-    product_ask = "\nWhat would you like to buy?"
-    quantity_ask = "How many #{selected_product.name} would you like to purchase?\n[Minimum of #{minimum_quantity}]:"
-
     # Get the product that the user wants to buy
+    product_ask = "\nWhat would you like to buy?"
     product_code = @prompt.select(product_ask, @products)
     selected_product = product(product_code)
 
     # Get the quantity that the user wants to buy
+    quantity_ask = "How many #{selected_product.name} would you like to purchase?\n[Minimum of #{minimum_quantity}]:"
     minimum_quantity = selected_product.packs.last
     quantity = @prompt.ask(quantity_ask, convert: :int)
     
