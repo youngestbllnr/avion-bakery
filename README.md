@@ -60,7 +60,7 @@ run bundler
 
     bundle
     
-## Run
+## Usage
 
 Execute the bakery.rb file
 
