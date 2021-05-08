@@ -1,4 +1,4 @@
-require_relative '../product'
+require_relative './product'
 
 module Service
   class BakeryService
