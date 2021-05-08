@@ -1,4 +1,3 @@
-require_relative './bakery_service'
 require_relative '../product'
 
 module Service
