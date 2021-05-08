@@ -36,6 +36,7 @@ class Bakery
 
   private
 
+  # Gets an order from the user and adds it to the cart
   def add_to_cart
     # Get the product that the user wants to buy
     product_ask = "\nWhat would you like to buy?"
@@ -55,6 +56,7 @@ class Bakery
     end
   end
 
+  # Returns a product object based on the product_code
   def product(product_code)
     case product_code
     when "VS5"
