@@ -9,7 +9,9 @@ class Cart
 
   # Adds an order to the cart
   def add(product_code, quantity)
-    new_order = Order.new(product_code, quantity).process
-    @orders.push(new_order)
+    order = Order.new(product_code, quantity)
+    order = order.process
+    
+    @orders.push(order)
   end
 end
