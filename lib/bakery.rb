@@ -24,7 +24,7 @@ class Bakery
     @continue_shopping_message = "\nWould you like to purchase more products?"
   end
   
-  def enter_bakery
+  def enter
     print @welcome_message
     @welcome_message
   end
@@ -44,7 +44,7 @@ class Bakery
     total
   end
 
-  def exit_bakery
+  def leave
     puts @exit_message
     @exit_message
   end

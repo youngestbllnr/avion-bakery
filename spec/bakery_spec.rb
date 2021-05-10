@@ -3,9 +3,9 @@ require_relative '../lib/bakery'
 RSpec.describe 'Bakery' do
   subject(:bakery) { Bakery.new }
 
-  context 'enter_bakery' do
+  context 'enter' do
     it 'should print out a welcome message to the customer' do
-      expect(bakery.enter_bakery).to eq("Welcome to Avion Bakery!\n")
+      expect(bakery.enter).to eq("Welcome to Avion Bakery!\n")
     end
   end
 
@@ -17,9 +17,9 @@ RSpec.describe 'Bakery' do
     end
   end
 
-  context 'exit_bakery' do
+  context 'leave' do
     it 'should print out an exit message to the customer' do
-      expect(bakery.exit_bakery).to eq("\nThank you for your purchase! Please come again.")
+      expect(bakery.leave).to eq("\nThank you for your purchase! Please come again.")
     end
   end
 end
