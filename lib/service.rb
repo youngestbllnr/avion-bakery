@@ -16,6 +16,7 @@ module Service
     end
 
     def call
+      # Print out label for orders
       puts "\nORDERS:"
 
       # Loop through the orders on the cart
@@ -29,10 +30,10 @@ module Service
         @total += cost.to_f
       end
 
-      # Format total to 2 decimal places
+      # Format total (2 decimal places)
       @total = '%.2f' % @total
 
-      # Print out total
+      # Print out and return total
       puts "\nTOTAL: $#{@total}"
       @total
     end
@@ -49,7 +50,7 @@ module Service
     def call
       pack
 
-      # Format cost
+      # Format cost to (2 decimal places)
       @cost = '%.2f' % @cost
 
       # Return breakdown and cost
