@@ -32,8 +32,9 @@ module Service
       # Format total to 2 decimal places
       @total = '%.2f' % @total
 
-      # Prin out total
+      # Print out total
       puts "\nTOTAL: $#{@total}"
+      @total
     end
   end
 
