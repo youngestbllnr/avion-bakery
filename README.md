@@ -62,6 +62,6 @@ run bundler
     
 ## Usage
 
-Execute the bakery.rb file
+Execute the visit_bakery.rb file, run with:
 
-    ruby bakery.rb
+    ruby visit_bakery.rb
