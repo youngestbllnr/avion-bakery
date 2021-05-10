@@ -9,14 +9,6 @@ RSpec.describe 'Bakery' do
     end
   end
 
-  context 'shop' do
-    it 'should add orders to the cart' do
-      bakery.shop
-
-      expect(bakery.cart.orders.length).not_to eq(0)
-    end
-  end
-
   context 'pay' do
     it 'should process the orders and return the total' do
       bakery.cart.add("VS5", 24)
