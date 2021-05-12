@@ -1,5 +1,5 @@
 require_relative './cart'
-require_relative './service'
+require_relative './service/cashier'
 require 'tty/prompt'
 
 class Bakery

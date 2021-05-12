@@ -1,4 +1,4 @@
-require_relative './lib/bakery'
+require_relative '../lib/bakery'
 
 # Execute the program
 bakery = Bakery.new

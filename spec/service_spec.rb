@@ -1,4 +1,5 @@
-require_relative '../lib/service'
+require_relative '../lib/service/cashier'
+require_relative '../lib/service/packer'
 
 RSpec.describe 'Service' do
   context 'Cashier' do
