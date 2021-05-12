@@ -41,26 +41,14 @@ module Service
 
     # Calculates the breakdown and cost
     def pack
-      last = available_packs.last
       available_packs.each_with_index do |content, index|
-        rem = @quantity % content
 
         # Break loop once quantity reaches 0
         break if @quantity == 0
 
-        # Skip to achieve optimal breakdown of packs
-        next_pack = available_packs[index + 1]
-        next unless content == last || (rem % next_pack) == 0 || (rem % last) == 0 || (rem < next_pack && last != content)
-
         # Compute the number of packs
-        if last != content && rem < next_pack
-          rem = @quantity - content
-          packs = 1
-          next unless (rem % next_pack) % last == 0
-        else
-          packs = (@quantity / content).floor()
-        end
-
+        packs = packs_for_content(content, index)
+        
         # Update product attribute :content
         @product.content = content
 
@@ -68,10 +56,25 @@ module Service
         breakdown = "#{packs} x #{content} $#{@product.price}"
         @breakdown.push(breakdown) unless packs == 0 
         @cost += @product.price * packs
-
-        # Update quantity
-        @quantity = rem
       end
+    end
+
+    def packs_for_content(content, index)
+      # Set variables
+      next_pack = available_packs[index + 1]
+      last_pack = available_packs.last
+      not_last = content != last_pack
+      packs = 0
+      
+      # Loop
+      while @quantity >= content do
+        break if not_last && ((@quantity % next_pack == 0 || @quantity % last_pack == 0) || (@quantity - content) < next_pack)
+        @quantity = @quantity - content
+        packs += 1
+      end
+
+      # Return packs
+      packs
     end
   end
 end
