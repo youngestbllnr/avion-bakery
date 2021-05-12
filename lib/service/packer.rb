@@ -59,6 +59,7 @@ module Service
       end
     end
 
+    # Calculates how many packs should be bought to achieve optimal packaging
     def packs_for_content(content, index)
       # Set variables
       next_pack = available_packs[index + 1]
