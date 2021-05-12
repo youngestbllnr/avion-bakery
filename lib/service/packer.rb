@@ -43,6 +43,7 @@ module Service
     def pack
       last = available_packs.last
       available_packs.each_with_index do |content, index|
+        current_is_last = 
         rem = @quantity % content
 
         # Break loop once quantity reaches 0
@@ -50,10 +51,16 @@ module Service
 
         # Skip to achieve optimal breakdown of packs
         next_pack = available_packs[index + 1]
-        next unless content == last || (rem % next_pack) == 0 || (rem % last) == 0
+        next unless content == last || (rem % next_pack) == 0 || (rem % last) == 0 || (rem < next_pack && last != content)
 
         # Compute the number of packs
-        packs = (@quantity / content).floor()
+        if last != content && rem < next_pack
+          rem = @quantity - content
+          packs = 1
+          next unless (rem % next_pack) % last == 0
+        else
+          packs = (@quantity / content).floor()
+        end
 
         # Update product attribute :content
         @product.content = content
