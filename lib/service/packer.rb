@@ -43,7 +43,6 @@ module Service
     def pack
       last = available_packs.last
       available_packs.each_with_index do |content, index|
-        current_is_last = 
         rem = @quantity % content
 
         # Break loop once quantity reaches 0
