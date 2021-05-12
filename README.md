@@ -56,12 +56,18 @@ Use bundler to install the dependencies. To do so, you need to install the bundl
 
     gem install bundler
 
-run bundler
+Run bundler
 
     bundle
     
-## Usage
+## Run
 
-Execute the visit_bakery.rb file, run with:
+Execute the runner.rb file, run with:
 
-    ruby visit_bakery.rb
+    ruby bin/runner.rb
+
+## Test
+
+How to run the test suite:
+
+    rspec spec
